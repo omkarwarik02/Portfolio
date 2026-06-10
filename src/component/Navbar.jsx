@@ -10,16 +10,16 @@ function Navbar() {
       className={`bg-[#111111] text-white flex justify-around  rounded-full items-center  gap-4 shadow-lg transition-all duration-500 ease-in-out px-5 py-2.5 ${expanded ? 'w-[420px]' : 'w-[290px]'}`}>
         
           <span className="font-semibold text-lg">OW</span>
-          <a href="#about" className="text-xs text-white/80 hover:text-white">
+          <a href="#about" className=" hidden md:block text-xs text-white/80 hover:text-white">
             About
           </a>
           <a
             href="#projects"
-            className="text-xs text-white/80 hover:text-white"
+            className=" hidden md:block text-xs text-white/80 hover:text-white"
           >
             Projects
           </a>
-          <a href="#contact" className="text-xs text-white/80 hover:text-white">
+          <a href="#contact" className=" hidden md:block text-xs text-white/80 hover:text-white">
             Contact
           </a>
           <a
