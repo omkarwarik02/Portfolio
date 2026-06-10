@@ -161,11 +161,11 @@ function Hero() {
               </small>
 
               <div className="flex items-center mt-2 gap-4">
-                <a href="#" target="_blank" className="flex flex-row items-center gap-1">
+                <a href="https://dev-lens-murex.vercel.app/" target="_blank" className="flex flex-row items-center gap-1">
                   <Link2 size={14} className="text-[#7C3AED]" />
                   <small className="text-[#7C3AED] font-bold">Website</small>
                 </a>
-                <a href="#" target="_blank" className="flex flex-row items-center gap-1">
+                <a href="https://github.com/omkarwarik02/DevLens" target="_blank" className="flex flex-row items-center gap-1">
                   <Code size={14} />
                   <small className="font-bold">Source</small>
                 </a>
@@ -185,11 +185,11 @@ function Hero() {
               </small>
 
               <div className="flex items-center mt-2 gap-4">
-                <a href="#" target="_blank" className="flex flex-row items-center gap-1">
+                <a href="https://helio-kohl.vercel.app/" target="_blank" className="flex flex-row items-center gap-1">
                   <Link2 size={14} className="text-[#7C3AED]" />
                   <small className="text-[#7C3AED] font-bold">Website</small>
                 </a>
-                <a href="#" target="_blank" className="flex flex-row items-center gap-1">
+                <a href="https://github.com/omkarwarik02/Helio" target="_blank" className="flex flex-row items-center gap-1">
                   <Code size={14} />
                   <small className="font-bold">Source</small>
                 </a>
