@@ -14,7 +14,7 @@ import emoji from "../assets/emoji.jpeg";
 function Hero() {
   return (
     <>
-      <div className="mt-16 md:mt-34 mb-8 flex flex-col items-center">
+      <div className="mt-16 md:mt-34 mb-8 flex flex-col items-center fade-in">
         <div className="w-full max-w-[672px] px-4 md:px-6">
           {/** first div*/}
           <div className="flex flex-row justify-between items-center">
