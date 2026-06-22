@@ -10,7 +10,6 @@ import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
 import emoji from "../assets/emoji.jpeg";
 
-
 function Hero() {
   return (
     <>
@@ -29,18 +28,31 @@ function Hero() {
             </div>
           </div>
           <div className="flex flex-col items-start mt-5">
-            <h1 className="text-2xl md:text-[32px] font-bold">hi, i'm omkar 👋</h1>
+            <h1 className="text-2xl md:text-[32px] font-bold">
+              hi, i'm omkar 👋
+            </h1>
             <small className="text-[#444748] mt-1">
               Full Stack Developer · MERN & MEAN Stack · Pune, India
             </small>
             <div className="mt-3 flex flex-row flex-wrap gap-2 items-center">
-              <a href="https://github.com/omkarwarik02" target="_blank" className="p-2 border border-[#ebebeb] rounded-lg hover:bg-[#f5f3f3]">
+              <a
+                href="https://github.com/omkarwarik02"
+                target="_blank"
+                className="p-2 border border-[#ebebeb] rounded-lg hover:bg-[#f5f3f3]"
+              >
                 <SquareTerminal size={18} />
               </a>
-              <a href="https://www.linkedin.com/in/omkar-warik-7360b122b/" target="_blank" className="p-2 border border-[#ebebeb] rounded-lg hover:bg-[#f5f3f3]">
+              <a
+                href="https://www.linkedin.com/in/omkar-warik-7360b122b/"
+                target="_blank"
+                className="p-2 border border-[#ebebeb] rounded-lg hover:bg-[#f5f3f3]"
+              >
                 <Users size={18} />
               </a>
-              <a href="mailto:omkarwarik1204@gmail.com" className="p-2 border border-[#ebebeb] rounded-lg hover:bg-[#f5f3f3]">
+              <a
+                href="mailto:omkarwarik1204@gmail.com"
+                className="p-2 border border-[#ebebeb] rounded-lg hover:bg-[#f5f3f3]"
+              >
                 <Mail size={18} />
               </a>
               <a
@@ -120,6 +132,10 @@ function Hero() {
                 "Java",
                 "React",
                 "Angular",
+                "Html",
+                "CSS",
+                "Angular Material",
+                "PrimeNG",
                 "Tailwind CSS",
                 "Node.js",
                 "Express.js",
@@ -128,6 +144,7 @@ function Hero() {
                 "Socket.IO",
                 "REST API",
                 "Git",
+                "Github",
                 "Postman",
                 "Vercel",
                 "Render",
@@ -142,12 +159,50 @@ function Hero() {
             </div>
           </div>
           <hr className="border-t border-[#ebebeb] my-8" />
+          <div className="flex flex-col items-start">
+            <h1 className="text-[24px] font-bold">Open Source Packages</h1>
+            <div className="flex mt-5 flex-col items-start">
+              <h1 className="font-bold">📦 @omkarwarik1204/omkar-ui <span className="ml-3 text-sm font-light">(React Component Library)</span></h1>
+              <p className="mt-3 font-bold"></p>
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+                A collection of reusable React components built with TypeScript
+                and Tailwind CSS. Designed to streamline UI development with
+                production-ready components.
+              </p>
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+                Components: - Dynamic Island Navbar,
+Expands horizontally on interaction with smooth transitions 
+and dynamic gap spacing. Modern, polished navigation component 
+for sleek UI designs.
+              </p>
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+               FAQ Accordion,
+Click to expand/collapse FAQ items with smooth transitions. 
+Only one item opens at a time for clean, organized content 
+presentation.
+
+              </p>
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+                Features: - Full TypeScript support with type declarations -
+                Tailwind CSS styling for easy customization - ESM and CommonJS
+                module support - Published on npm
+              </p>
+              <a href="https://www.npmjs.com/package/@omkarwarik1204/omkar-ui" className="mt-3 ">Link</a>
+              
+            </div>
+          </div>
+
+          <hr className="border-t border-[#ebebeb] my-8" />
           <div id="projects" className="flex flex-col items-start">
             <h1 className="text-[24px] font-bold">My Projects</h1>
             <small className="text-[#444748]">Check out my latest work</small>
 
             <div className="flex mt-5 flex-col w-full">
-              <img src={Devlens} alt="DevLens project" className="rounded-2xl w-full object-cover"></img>
+              <img
+                src={Devlens}
+                alt="DevLens project"
+                className="rounded-2xl w-full object-cover"
+              ></img>
               <h1 className="font-bold text-left mt-5 text-[#444748]">
                 DevLens
               </h1>
@@ -161,11 +216,19 @@ function Hero() {
               </small>
 
               <div className="flex items-center mt-2 gap-4">
-                <a href="https://dev-lens-murex.vercel.app/" target="_blank" className="flex flex-row items-center gap-1">
+                <a
+                  href="https://dev-lens-murex.vercel.app/"
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
                   <Link2 size={14} className="text-[#7C3AED]" />
                   <small className="text-[#7C3AED] font-bold">Website</small>
                 </a>
-                <a href="https://github.com/omkarwarik02/DevLens" target="_blank" className="flex flex-row items-center gap-1">
+                <a
+                  href="https://github.com/omkarwarik02/DevLens"
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
                   <Code size={14} />
                   <small className="font-bold">Source</small>
                 </a>
@@ -173,7 +236,11 @@ function Hero() {
             </div>
 
             <div className="flex flex-col mt-12 w-full">
-              <img src={Helio} alt="Helio project" className="rounded-2xl w-full object-cover"></img>
+              <img
+                src={Helio}
+                alt="Helio project"
+                className="rounded-2xl w-full object-cover"
+              ></img>
               <h1 className="font-bold text-left mt-5 text-[#444748]">Helio</h1>
               <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 AI-powered study planner. Generates personalised 7-day study
@@ -185,11 +252,19 @@ function Hero() {
               </small>
 
               <div className="flex items-center mt-2 gap-4">
-                <a href="https://helio-kohl.vercel.app/" target="_blank" className="flex flex-row items-center gap-1">
+                <a
+                  href="https://helio-kohl.vercel.app/"
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
                   <Link2 size={14} className="text-[#7C3AED]" />
                   <small className="text-[#7C3AED] font-bold">Website</small>
                 </a>
-                <a href="https://github.com/omkarwarik02/Helio" target="_blank" className="flex flex-row items-center gap-1">
+                <a
+                  href="https://github.com/omkarwarik02/Helio"
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
                   <Code size={14} />
                   <small className="font-bold">Source</small>
                 </a>
@@ -203,7 +278,8 @@ function Hero() {
             <h1 className="font-bold">Get in touch</h1>
             <small className="mt-3 px-4">
               I'm currently open to full-time entry-level roles. Feel free to
-              reach out at omkarwarik1204@gmail.com — I'll respond whenever I can.
+              reach out at omkarwarik1204@gmail.com — I'll respond whenever I
+              can.
             </small>
           </div>
 
