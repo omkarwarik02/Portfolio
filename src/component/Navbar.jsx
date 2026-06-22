@@ -3,7 +3,7 @@ import { useState } from "react";
 function Navbar() {
     const [expanded, setExpanded] = useState(false)
   return (
-    <div style={{ background: 'linear-gradient(to bottom, #ffffff 0%, transparent 100%)' }} className="fixed top-0 left-0 right-0 flex justify-center z-50 pt-4 pb-10">
+    <div className="fixed top-0 left-0 right-0 flex justify-center z-50 pt-4 pb-10 sm:[background:linear-gradient(to_bottom,#ffffff_0%,transparent_100%)]">
       <div
       onMouseEnter={()=> setExpanded(true)}
       onMouseLeave={()=>setExpanded(false)}
