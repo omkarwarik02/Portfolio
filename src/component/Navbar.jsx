@@ -3,14 +3,14 @@ import { useState } from "react";
 function Navbar() {
     const [expanded, setExpanded] = useState(false)
   return (
-    <div className="fixed top-4 left-0 right-0 flex justify-center z-50">
+    <div style={{ background: 'linear-gradient(to bottom, #ffffff 0%, transparent 100%)' }} className="fixed top-0 left-0 right-0 flex justify-center z-50 pt-4 pb-10">
       <div
       onMouseEnter={()=> setExpanded(true)}
-      onMouseLeave={()=>setExpanded(false)} 
+      onMouseLeave={()=>setExpanded(false)}
       className={`bg-[#111111] text-white flex justify-around rounded-full items-center shadow-lg transition-all duration-500 ease-in-out px-5 py-3 w-auto ${expanded ? 'md:px-10 gap-8' : 'md:px-5 gap-6'}`}>
-          <div className={`flex gap-4 items-center transition-all duration-500 ease-in-out  ${expanded ? 'gap-8': 'gap-4'}`}>
+          <div className={` flex gap-4 items-center transition-all duration-500 ease-in-out  ${expanded ? 'gap-8': 'gap-4'}`}>
           <span className="font-semibold text-lg">OW</span>
-        
+
                <a href="#about" className=" hidden md:block text-xs text-white/80 hover:text-white">
             About
           </a>
@@ -31,8 +31,8 @@ function Navbar() {
             &lt;/&gt;
           </a>
           </div>
-       
-        
+
+
       </div>
     </div>
   );

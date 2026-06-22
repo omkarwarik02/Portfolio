@@ -162,7 +162,12 @@ function Hero() {
           <div className="flex flex-col items-start">
             <h1 className="text-[24px] font-bold">Open Source Packages</h1>
             <div className="flex mt-5 flex-col items-start">
-              <h1 className="font-bold">📦 @omkarwarik1204/omkar-ui <span className="ml-3 text-sm font-light">(React Component Library)</span></h1>
+              <h1 className="font-bold">
+                📦 @omkarwarik1204/omkar-ui{" "}
+                <span className="ml-3 text-sm font-light">
+                  (React Component Library)
+                </span>
+              </h1>
               <p className="mt-3 font-bold"></p>
               <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 A collection of reusable React components built with TypeScript
@@ -170,25 +175,26 @@ function Hero() {
                 production-ready components.
               </p>
               <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
-                Components: - Dynamic Island Navbar,
-Expands horizontally on interaction with smooth transitions 
-and dynamic gap spacing. Modern, polished navigation component 
-for sleek UI designs.
+                Components: - Dynamic Island Navbar, Expands horizontally on
+                interaction with smooth transitions and dynamic gap spacing.
+                Modern, polished navigation component for sleek UI designs.
               </p>
               <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
-               FAQ Accordion,
-Click to expand/collapse FAQ items with smooth transitions. 
-Only one item opens at a time for clean, organized content 
-presentation.
-
+                FAQ Accordion, Click to expand/collapse FAQ items with smooth
+                transitions. Only one item opens at a time for clean, organized
+                content presentation.
               </p>
               <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 Features: - Full TypeScript support with type declarations -
                 Tailwind CSS styling for easy customization - ESM and CommonJS
                 module support - Published on npm
               </p>
-              <a href="https://www.npmjs.com/package/@omkarwarik1204/omkar-ui" className="mt-3 ">Link</a>
-              
+              <a
+                href="https://www.npmjs.com/package/@omkarwarik1204/omkar-ui"
+                className="mt-3 "
+              >
+                Link
+              </a>
             </div>
           </div>
 
