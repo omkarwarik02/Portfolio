@@ -163,7 +163,7 @@ function Hero() {
             <h1 className="text-[24px] font-bold">Open Source Packages</h1>
             <div className="flex mt-5 flex-col items-start">
               <h1 className="font-bold">
-                📦 @omkarwarik1204/omkar-ui{" "}
+                📦 @omkarwarik1204/stark{" "}
                 <span className="ml-3 text-sm font-light">
                   (React Component Library)
                 </span>
