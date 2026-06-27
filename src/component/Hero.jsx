@@ -56,8 +56,8 @@ function Hero() {
                 <Mail size={18} />
               </a>
               <a
-                href="/Resume.pdf"
-                download="Resume.pdf"
+                href="/Omkar_Resume.pdf"
+                download="Omkar_Resume.pdf"
                 className="p-2 bg-[#111111] rounded-lg flex items-center gap-2 cursor-pointer hover:opacity-90"
               >
                 <FileUserIcon size={18} className="text-white" />
