@@ -9,6 +9,7 @@ import {
 import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
 import emoji from "../assets/emoji.jpeg";
+import { GitHubCalendar } from 'react-github-calendar';
 
 function Hero() {
   return (
@@ -277,7 +278,16 @@ function Hero() {
               </div>
             </div>
           </div>
+           <hr className="border-t border-[#ebebeb] my-8" />
+              <div className="flex flex-col items-center">
+                <GitHubCalendar
+                  username = 'omkarwarik02'
+                  colorScheme="light"
+                  fontSize={12}
+                >
+                </GitHubCalendar>
 
+              </div>
           <hr className="border-t border-[#ebebeb] my-8" />
 
           <div id="contact" className="flex flex-col text-center">
