@@ -10,7 +10,6 @@ import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
 import emoji from "../assets/emoji.jpeg";
 import { GitHubCalendar } from 'react-github-calendar';
-import ScrollReveal from "./ScrollReveal";
 import Reveal from "./Reveal";
 
 function Hero() {
@@ -172,38 +171,26 @@ function Hero() {
                 </span>
               </h1>
               <p className="mt-3 font-bold"></p>
-              <ScrollReveal
-                containerClassName="mt-3 !text-left"
-                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
-              >
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 A collection of reusable React components built with TypeScript
                 and Tailwind CSS. Designed to streamline UI development with
                 production-ready components.
-              </ScrollReveal>
-              <ScrollReveal
-                containerClassName="mt-3 !text-left"
-                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
-              >
+              </p>
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 Components: - Dynamic Island Navbar, Expands horizontally on
                 interaction with smooth transitions and dynamic gap spacing.
                 Modern, polished navigation component for sleek UI designs.
-              </ScrollReveal>
-              <ScrollReveal
-                containerClassName="mt-3 !text-left"
-                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
-              >
+              </p>
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 FAQ Accordion, Click to expand/collapse FAQ items with smooth
                 transitions. Only one item opens at a time for clean, organized
                 content presentation.
-              </ScrollReveal>
-              <ScrollReveal
-                containerClassName="mt-3 !text-left"
-                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
-              >
+              </p>
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 Features: - Full TypeScript support with type declarations -
                 Tailwind CSS styling for easy customization - ESM and CommonJS
                 module support - Published on npm
-              </ScrollReveal>
+              </p>
               <a
                 href="https://www.npmjs.com/package/@omkarwarik1204/omkar-ui"
                 className="mt-3 "
@@ -229,14 +216,11 @@ function Hero() {
               <h1 className="font-bold text-left mt-5 text-[#444748]">
                 DevLens
               </h1>
-              <ScrollReveal
-                containerClassName="mt-3 !text-left"
-                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
-              >
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 AI-powered code review tool. Paste your code, get detailed AI
                 feedback with ratings, suggestions, and best practices across 6
                 languages.
-              </ScrollReveal>
+              </p>
               <small className="text-left tracking-widest font-bold mt-3">
                 React | TypeScript | Node.js | Express.js | MongoDB | Groq AI
               </small>
@@ -268,14 +252,11 @@ function Hero() {
                 className="rounded-2xl w-full object-cover"
               ></img>
               <h1 className="font-bold text-left mt-5 text-[#444748]">Helio</h1>
-              <ScrollReveal
-                containerClassName="mt-3 !text-left"
-                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
-              >
+              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 AI-powered study planner. Generates personalised 7-day study
                 plans, task breakdowns, and an AI chat assistant from
                 user-provided subjects.
-              </ScrollReveal>
+              </p>
               <small className="text-left tracking-widest font-bold mt-3">
                 Angular | Node.js | Express.js | MongoDB | Groq AI | Better Auth
               </small>
@@ -314,14 +295,11 @@ function Hero() {
 
           <Reveal id="contact" className="flex flex-col text-center">
             <h1 className="font-bold">Get in touch</h1>
-            <ScrollReveal
-              containerClassName="mt-3 px-4 !text-center"
-              textClassName="!text-sm !font-normal"
-            >
+            <small className="mt-3 px-4">
               I'm currently open to full-time entry-level roles. Feel free to
               reach out at omkarwarik1204@gmail.com — I'll respond whenever I
               can.
-            </ScrollReveal>
+            </small>
           </Reveal>
 
           <Reveal delay={0.1} className="flex gap-4 items-center justify-center mt-3">
