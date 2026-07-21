@@ -10,6 +10,8 @@ import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
 import emoji from "../assets/emoji.jpeg";
 import { GitHubCalendar } from 'react-github-calendar';
+import ScrollReveal from "./ScrollReveal";
+import Reveal from "./Reveal";
 
 function Hero() {
   return (
@@ -17,7 +19,7 @@ function Hero() {
       <div className="mt-16 md:mt-34 mb-8 flex flex-col items-center fade-in">
         <div className="w-full max-w-[672px] px-4 md:px-6">
           {/** first div*/}
-          <div className="flex flex-row justify-between items-center">
+          <Reveal className="flex flex-row justify-between items-center">
             <img
               src={emoji}
               alt="omkar"
@@ -27,8 +29,8 @@ function Hero() {
               <span className="h-1.5 w-1.5 rounded-full bg-green-500"></span>
               Open to work
             </div>
-          </div>
-          <div className="flex flex-col items-start mt-5">
+          </Reveal>
+          <Reveal delay={0.1} className="flex flex-col items-start mt-5">
             <h1 className="text-2xl md:text-[32px] font-bold">
               hi, i'm omkar 👋
             </h1>
@@ -65,10 +67,10 @@ function Hero() {
                 <span className="text-white text-xs font-medium">Resume</span>
               </a>
             </div>
-          </div>
+          </Reveal>
 
           {/**2nd div */}
-          <div id="about" className="mt-10 flex flex-col items-start">
+          <Reveal id="about" className="mt-10 flex flex-col items-start">
             <h1 className="text-[24px] font-bold">About</h1>
 
             <p className="mt-3 text-[#444748] text-left text-sm md:text-base">
@@ -79,10 +81,10 @@ function Hero() {
               production-ready products. Currently open to entry-level
               full-stack roles.
             </p>
-          </div>
+          </Reveal>
           {/**line */}
           <hr className="border-t border-[#ebebeb] my-8" />
-          <div className="flex flex-col items-start">
+          <Reveal className="flex flex-col items-start">
             <h1 className="text-[24px] font-bold">Education</h1>
             <div className="flex flex-row items-center gap-4 py-4">
               <div className="rounded-full bg-purple-600 h-[48px] w-[48px] justify-center items-center flex flex-row shrink-0">
@@ -121,9 +123,9 @@ function Hero() {
                 </small>
               </div>
             </div>
-          </div>
+          </Reveal>
           <hr className="border-t border-[#ebebeb] my-8" />
-          <div className="flex flex-col items-start">
+          <Reveal className="flex flex-col items-start">
             <h1 className="text-[24px] font-bold">Stack</h1>
 
             <div className="flex flex-wrap gap-2 mt-4">
@@ -158,9 +160,9 @@ function Hero() {
                 </span>
               ))}
             </div>
-          </div>
+          </Reveal>
           <hr className="border-t border-[#ebebeb] my-8" />
-          <div className="flex flex-col items-start">
+          <Reveal className="flex flex-col items-start">
             <h1 className="text-[24px] font-bold">Open Source Packages</h1>
             <div className="flex mt-5 flex-col items-start">
               <h1 className="font-bold">
@@ -170,26 +172,38 @@ function Hero() {
                 </span>
               </h1>
               <p className="mt-3 font-bold"></p>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+              <ScrollReveal
+                containerClassName="mt-3 !text-left"
+                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
+              >
                 A collection of reusable React components built with TypeScript
                 and Tailwind CSS. Designed to streamline UI development with
                 production-ready components.
-              </p>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+              </ScrollReveal>
+              <ScrollReveal
+                containerClassName="mt-3 !text-left"
+                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
+              >
                 Components: - Dynamic Island Navbar, Expands horizontally on
                 interaction with smooth transitions and dynamic gap spacing.
                 Modern, polished navigation component for sleek UI designs.
-              </p>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+              </ScrollReveal>
+              <ScrollReveal
+                containerClassName="mt-3 !text-left"
+                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
+              >
                 FAQ Accordion, Click to expand/collapse FAQ items with smooth
                 transitions. Only one item opens at a time for clean, organized
                 content presentation.
-              </p>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+              </ScrollReveal>
+              <ScrollReveal
+                containerClassName="mt-3 !text-left"
+                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
+              >
                 Features: - Full TypeScript support with type declarations -
                 Tailwind CSS styling for easy customization - ESM and CommonJS
                 module support - Published on npm
-              </p>
+              </ScrollReveal>
               <a
                 href="https://www.npmjs.com/package/@omkarwarik1204/omkar-ui"
                 className="mt-3 "
@@ -197,14 +211,16 @@ function Hero() {
                 Link
               </a>
             </div>
-          </div>
+          </Reveal>
 
           <hr className="border-t border-[#ebebeb] my-8" />
           <div id="projects" className="flex flex-col items-start">
-            <h1 className="text-[24px] font-bold">My Projects</h1>
-            <small className="text-[#444748]">Check out my latest work</small>
+            <Reveal className="flex flex-col items-start">
+              <h1 className="text-[24px] font-bold">My Projects</h1>
+              <small className="text-[#444748]">Check out my latest work</small>
+            </Reveal>
 
-            <div className="flex mt-5 flex-col w-full">
+            <Reveal className="flex mt-5 flex-col w-full">
               <img
                 src={Devlens}
                 alt="DevLens project"
@@ -213,11 +229,14 @@ function Hero() {
               <h1 className="font-bold text-left mt-5 text-[#444748]">
                 DevLens
               </h1>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+              <ScrollReveal
+                containerClassName="mt-3 !text-left"
+                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
+              >
                 AI-powered code review tool. Paste your code, get detailed AI
                 feedback with ratings, suggestions, and best practices across 6
                 languages.
-              </p>
+              </ScrollReveal>
               <small className="text-left tracking-widest font-bold mt-3">
                 React | TypeScript | Node.js | Express.js | MongoDB | Groq AI
               </small>
@@ -240,20 +259,23 @@ function Hero() {
                   <small className="font-bold">Source</small>
                 </a>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="flex flex-col mt-12 w-full">
+            <Reveal delay={0.1} className="flex flex-col mt-12 w-full">
               <img
                 src={Helio}
                 alt="Helio project"
                 className="rounded-2xl w-full object-cover"
               ></img>
               <h1 className="font-bold text-left mt-5 text-[#444748]">Helio</h1>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
+              <ScrollReveal
+                containerClassName="mt-3 !text-left"
+                textClassName="!text-[#444748] !text-sm md:!text-base !font-normal"
+              >
                 AI-powered study planner. Generates personalised 7-day study
                 plans, task breakdowns, and an AI chat assistant from
                 user-provided subjects.
-              </p>
+              </ScrollReveal>
               <small className="text-left tracking-widest font-bold mt-3">
                 Angular | Node.js | Express.js | MongoDB | Groq AI | Better Auth
               </small>
@@ -276,10 +298,10 @@ function Hero() {
                   <small className="font-bold">Source</small>
                 </a>
               </div>
-            </div>
+            </Reveal>
           </div>
            <hr className="border-t border-[#ebebeb] my-8" />
-              <div className="flex flex-col items-center">
+              <Reveal className="flex flex-col items-center">
                 <GitHubCalendar
                   username = 'omkarwarik02'
                   colorScheme="light"
@@ -287,19 +309,22 @@ function Hero() {
                 >
                 </GitHubCalendar>
 
-              </div>
+              </Reveal>
           <hr className="border-t border-[#ebebeb] my-8" />
 
-          <div id="contact" className="flex flex-col text-center">
+          <Reveal id="contact" className="flex flex-col text-center">
             <h1 className="font-bold">Get in touch</h1>
-            <small className="mt-3 px-4">
+            <ScrollReveal
+              containerClassName="mt-3 px-4 !text-center"
+              textClassName="!text-sm !font-normal"
+            >
               I'm currently open to full-time entry-level roles. Feel free to
               reach out at omkarwarik1204@gmail.com — I'll respond whenever I
               can.
-            </small>
-          </div>
+            </ScrollReveal>
+          </Reveal>
 
-          <div className="flex gap-4 items-center justify-center mt-3">
+          <Reveal delay={0.1} className="flex gap-4 items-center justify-center mt-3">
             <a
               href="mailto:omkarwarik1204@gmail.com"
               className="text-xs text-[#444748] hover:text-[#111111]"
@@ -320,14 +345,14 @@ function Hero() {
             >
               GitHub
             </a>
-          </div>
+          </Reveal>
         </div>
       </div>
-      <div className="mt-20 border-t border-[#ebebeb] py-8 w-full text-center">
+      <Reveal className="mt-20 border-t border-[#ebebeb] py-8 w-full text-center">
         <small className="text-[#444748]">
           © 2026 Omkar Warik. Built with precision.
         </small>
-      </div>
+      </Reveal>
     </>
   );
 }
