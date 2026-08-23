@@ -255,8 +255,8 @@ function Hero() {
                     color: "bg-blue-500",
                     title: "Priority filter for the Dashboard",
                     desc: "Added a priority filter dropdown to the Dashboard navbar so users can narrow the Kanban board to High, Medium, Low, or All priority tasks. Frontend-only change, no backend or API changes required.",
-                    pr: null,
-                    href: null,
+                    pr: "PR #341",
+                    href: "https://github.com/anoopcodehack/DevBoard/pull/341",
                   },
                 ].map(({ icon: Icon, color, title, desc, pr, href }) => (
                   <div key={title} className="relative flex items-start gap-4 pl-0">
