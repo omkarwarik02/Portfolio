@@ -5,6 +5,10 @@ import {
   FileUserIcon,
   Link2,
   Code,
+  GitBranch,
+  ShieldCheck,
+  Sparkles,
+  ListFilter,
 } from "lucide-react";
 import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
@@ -197,6 +201,92 @@ function Hero() {
               >
                 Link
               </a>
+            </div>
+          </Reveal>
+
+          <hr className="border-t border-[#ebebeb] my-8" />
+          <Reveal className="flex flex-col items-start w-full">
+            <h1 className="text-[24px] font-bold">Open Source Contributions</h1>
+            <small className="text-[#444748]">
+              Shipping fixes and features on other people's codebases
+            </small>
+
+            <div className="mt-5 w-full rounded-2xl border border-[#ebebeb] p-4 md:p-5">
+              <div className="flex flex-row items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-2">
+                  <GitBranch size={16} className="text-[#7C3AED]" />
+                  <h1 className="font-bold">DevBoard</h1>
+                  <span className="text-xs font-light text-[#444748]">
+                    MERN Kanban App
+                  </span>
+                </div>
+                <a
+                  href="https://github.com/anoopcodehack/DevBoard"
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
+                  <Code size={14} />
+                  <small className="font-bold">Repository</small>
+                </a>
+              </div>
+
+              <div className="relative mt-6 flex flex-col gap-6">
+                <div className="absolute left-3.75 top-2 bottom-2 w-px bg-[#ebebeb]" />
+
+                {[
+                  {
+                    icon: ShieldCheck,
+                    color: "bg-[#DC2626]",
+                    title: "Hardened API error handling",
+                    desc: "Added try/catch error handling across API routes, eliminating unhandled server crashes on invalid requests, following a Git branching and pull request-based code review workflow.",
+                    pr: "PR #105",
+                    href: "https://github.com/anoopcodehack/DevBoard/pull/105",
+                  },
+                  {
+                    icon: Sparkles,
+                    color: "bg-[#7C3AED]",
+                    title: "AI-powered tag auto-suggestion",
+                    desc: "Built a feature using the Gemini API and a custom React hook that analyzes task content to recommend relevant tags in real time.",
+                    pr: "PR #127",
+                    href: "https://github.com/anoopcodehack/DevBoard/pull/127",
+                  },
+                  {
+                    icon: ListFilter,
+                    color: "bg-blue-500",
+                    title: "Priority filter for the Dashboard",
+                    desc: "Added a priority filter dropdown to the Dashboard navbar so users can narrow the Kanban board to High, Medium, Low, or All priority tasks. Frontend-only change, no backend or API changes required.",
+                    pr: null,
+                    href: null,
+                  },
+                ].map(({ icon: Icon, color, title, desc, pr, href }) => (
+                  <div key={title} className="relative flex items-start gap-4 pl-0">
+                    <div
+                      className={`relative z-10 h-8 w-8 shrink-0 rounded-full ${color} flex items-center justify-center`}
+                    >
+                      <Icon size={15} className="text-white" />
+                    </div>
+                    <div className="flex flex-col items-start">
+                      <div className="flex items-center flex-wrap gap-2">
+                        <h1 className="font-bold text-sm md:text-base">
+                          {title}
+                        </h1>
+                        {pr && (
+                          <a
+                            href={href}
+                            target="_blank"
+                            className="px-2 py-0.5 rounded-full bg-[#f4f4f5] text-[#7C3AED] text-xs font-bold hover:bg-[#ebebeb]"
+                          >
+                            {pr}
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-left mt-1 text-[#444748] text-sm md:text-base">
+                        {desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
 
