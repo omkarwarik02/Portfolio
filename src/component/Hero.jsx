@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import {
   SquareTerminal,
   Users,
@@ -13,13 +14,16 @@ import {
 import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
 import emoji from "../assets/emoji.jpeg";
-import { GitHubCalendar } from 'react-github-calendar';
 import Reveal from "./Reveal";
+
+const GitHubCalendar = lazy(() =>
+  import("react-github-calendar").then((m) => ({ default: m.GitHubCalendar }))
+);
 
 function Hero() {
   return (
     <>
-      <div className="mt-16 md:mt-34 mb-8 flex flex-col items-center fade-in">
+      <div className="mt-16 md:mt-34 mb-8 flex flex-col items-center">
         <div className="w-full max-w-[672px] px-4 md:px-6">
           {/** first div*/}
           <Reveal className="flex flex-row justify-between items-center">
@@ -301,6 +305,10 @@ function Hero() {
               <img
                 src={Devlens}
                 alt="DevLens project"
+                width={1894}
+                height={878}
+                loading="lazy"
+                decoding="async"
                 className="rounded-2xl w-full object-cover"
               ></img>
               <h1 className="font-bold text-left mt-5 text-[#444748]">
@@ -339,6 +347,10 @@ function Hero() {
               <img
                 src={Helio}
                 alt="Helio project"
+                width={1898}
+                height={842}
+                loading="lazy"
+                decoding="async"
                 className="rounded-2xl w-full object-cover"
               ></img>
               <h1 className="font-bold text-left mt-5 text-[#444748]">Helio</h1>
@@ -373,13 +385,13 @@ function Hero() {
           </div>
            <hr className="border-t border-[#ebebeb] my-8" />
               <Reveal className="flex flex-col items-center">
-                <GitHubCalendar
-                  username = 'omkarwarik02'
-                  colorScheme="light"
-                  fontSize={12}
-                >
-                </GitHubCalendar>
-
+                <Suspense fallback={<div className="h-37.5 w-full" />}>
+                  <GitHubCalendar
+                    username="omkarwarik02"
+                    colorScheme="light"
+                    fontSize={12}
+                  />
+                </Suspense>
               </Reveal>
           <hr className="border-t border-[#ebebeb] my-8" />
 
