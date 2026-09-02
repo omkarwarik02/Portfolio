@@ -4,6 +4,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Metric-matched fallback so swapping to Inter once it loads doesn't
+   reflow the page - the fallback occupies the same space Inter will. */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  ascent-override: 90.44%;
+  descent-override: 22.52%;
+  line-gap-override: 0%;
+  size-adjust: 107.4%;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
 }
