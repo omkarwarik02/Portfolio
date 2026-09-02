@@ -10,11 +10,72 @@ import {
   ShieldCheck,
   Sparkles,
   ListFilter,
+  Database,
+  Zap,
 } from "lucide-react";
+import { LogoTooltip } from "@omkarwarik1204/stark";
+import "@omkarwarik1204/stark/style.css";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiOpenjdk,
+  SiReact,
+  SiAngular,
+  SiHtml5,
+  SiCss,
+  SiMaterialdesign,
+  SiPrimeng,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiSocketdotio,
+  SiOpenapiinitiative,
+  SiBetterauth,
+  SiGooglegemini,
+  SiJest,
+  SiTestinglibrary,
+  SiGithubactions,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiVercel,
+  SiRender,
+} from "react-icons/si";
 import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
 import emoji from "../assets/emoji.jpeg";
 import Reveal from "./Reveal";
+
+const skills = [
+  { label: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+  { label: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+  { label: "Java", Icon: SiOpenjdk, color: "#437291" },
+  { label: "React", Icon: SiReact, color: "#61DAFB" },
+  { label: "Angular", Icon: SiAngular, color: "#DD0031" },
+  { label: "Html", Icon: SiHtml5, color: "#E34F26" },
+  { label: "CSS", Icon: SiCss, color: "#663399" },
+  { label: "Angular Material", Icon: SiMaterialdesign, color: "#757575" },
+  { label: "PrimeNG", Icon: SiPrimeng, color: "#0EA5E9" },
+  { label: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
+  { label: "Node.js", Icon: SiNodedotjs, color: "#339933" },
+  { label: "Express.js", Icon: SiExpress, color: "#000000" },
+  { label: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+  { label: "SQL", Icon: Database, color: "#4479A1" },
+  { label: "Socket.IO", Icon: SiSocketdotio, color: "#010101" },
+  { label: "REST API", Icon: SiOpenapiinitiative, color: "#6BA539" },
+  { label: "Better Auth", Icon: SiBetterauth, color: "#000000" },
+  { label: "Groq API", Icon: Zap, color: "#F55036" },
+  { label: "Gemini API", Icon: SiGooglegemini, color: "#8E75B2" },
+  { label: "Git", Icon: SiGit, color: "#F05032" },
+  { label: "Github", Icon: SiGithub, color: "#181717" },
+  { label: "Postman", Icon: SiPostman, color: "#FF6C37" },
+  { label: "Vercel", Icon: SiVercel, color: "#000000" },
+  { label: "Render", Icon: SiRender, color: "#46E3B7" },
+  { label: "Jest", Icon: SiJest, color: "#C21325" },
+  { label: "React Testing Library", Icon: SiTestinglibrary, color: "#E33332" },
+  { label: "GitHub Actions", Icon: SiGithubactions, color: "#2088FF" },
+];
 
 const GitHubCalendar = lazy(() =>
   import("react-github-calendar").then((m) => ({ default: m.GitHubCalendar }))
@@ -135,36 +196,14 @@ function Hero() {
           <Reveal className="flex flex-col items-start">
             <h1 className="text-[24px] font-bold">Stack</h1>
 
-            <div className="flex flex-wrap gap-2 mt-4">
-              {[
-                "JavaScript",
-                "TypeScript",
-                "Java",
-                "React",
-                "Angular",
-                "Html",
-                "CSS",
-                "Angular Material",
-                "PrimeNG",
-                "Tailwind CSS",
-                "Node.js",
-                "Express.js",
-                "MongoDB",
-                "GraphQL",
-                "Socket.IO",
-                "REST API",
-                "Git",
-                "Github",
-                "Postman",
-                "Vercel",
-                "Render",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 bg-[#f4f4f5] text-[#111111] rounded-full text-xs"
-                >
-                  {skill}
-                </span>
+            <div className="flex flex-wrap gap-4 mt-4">
+              {skills.map(({ label, Icon, color }) => (
+                <LogoTooltip
+                  key={label}
+                  label={label}
+                  size={28}
+                  logo={<Icon color={color} size={28} />}
+                />
               ))}
             </div>
           </Reveal>
