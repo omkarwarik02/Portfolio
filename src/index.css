@@ -2,6 +2,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* Reserve the scrollbar's width up front so it appearing/disappearing
+     as content loads (e.g. the async GitHub calendar) never shifts the
+     centered layout horizontally. */
+  scrollbar-gutter: stable;
 }
 
 /* Metric-matched fallback so swapping to Inter once it loads doesn't
