@@ -10,6 +10,7 @@ const Reveal = ({
   duration = 0.6,
   amount = 0.2,
   once = true,
+  ...rest
 }) => {
   const MotionTag = motion[as] ?? motion.div;
   const Tag = as;
@@ -30,7 +31,7 @@ const Reveal = ({
 
   if (mode === "pending") {
     return (
-      <Tag ref={ref} className={className} style={{ visibility: "hidden" }}>
+      <Tag ref={ref} className={className} style={{ visibility: "hidden" }} {...rest}>
         {children}
       </Tag>
     );
@@ -38,7 +39,7 @@ const Reveal = ({
 
   if (mode === "static") {
     return (
-      <Tag ref={ref} className={className}>
+      <Tag ref={ref} className={className} {...rest}>
         {children}
       </Tag>
     );
@@ -51,6 +52,7 @@ const Reveal = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, amount }}
       transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
+      {...rest}
     >
       {children}
     </MotionTag>
