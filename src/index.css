@@ -8,6 +8,18 @@ html {
   scrollbar-gutter: stable;
 }
 
+/* Self-hosted so the font is same-origin (no extra DNS/TLS round trip to
+   fonts.googleapis.com + fonts.gstatic.com) and can be preloaded - that's
+   what actually beats the font-display block window and avoids the
+   fallback-then-swap flash, not the font-display value by itself. */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-var-latin.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: optional;
+}
+
 /* Metric-matched fallback so swapping to Inter once it loads doesn't
    reflow the page - the fallback occupies the same space Inter will. */
 @font-face {
