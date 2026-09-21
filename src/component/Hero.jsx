@@ -12,6 +12,13 @@ import {
   ListFilter,
   Database,
   Zap,
+  Download,
+  PanelTop,
+  ChevronsUpDown,
+  MousePointerClick,
+  Heart,
+  Info,
+  KeyRound,
 } from "lucide-react";
 import { LogoTooltip } from "@omkarwarik1204/stark";
 import "@omkarwarik1204/stark/style.css";
@@ -77,6 +84,57 @@ const skills = [
   { label: "GitHub Actions", Icon: SiGithubactions, color: "#2088FF" },
 ];
 
+const starkComponents = [
+  {
+    name: "DynamicIslandNavbar",
+    desc: "Floating, Apple-style navbar that expands horizontally on hover.",
+    icon: PanelTop,
+    color: "bg-[#7C3AED]",
+  },
+  {
+    name: "FAQAccordion",
+    desc: "Accessible, animated accordion, one item open at a time.",
+    icon: ChevronsUpDown,
+    color: "bg-blue-500",
+  },
+  {
+    name: "DropdownMenu",
+    desc: "Keyboard-accessible dropdown with click-outside detection.",
+    icon: MousePointerClick,
+    color: "bg-[#DC2626]",
+  },
+  {
+    name: "FileDownloadButton",
+    desc: "Minimal, customizable button for triggering file downloads.",
+    icon: Download,
+    color: "bg-emerald-600",
+  },
+  {
+    name: "LikeButton",
+    desc: "Animated like/heart button with live, controlled count tracking.",
+    icon: Heart,
+    color: "bg-pink-500",
+  },
+  {
+    name: "LogoTooltip",
+    desc: "Hoverable logo badge with a tooltip label, used for the Stack section above.",
+    icon: Info,
+    color: "bg-amber-500",
+  },
+  {
+    name: "EmailCheck",
+    desc: "Email input with live regex validation feedback as you type.",
+    icon: Mail,
+    color: "bg-cyan-600",
+  },
+  {
+    name: "PasswordStrengthCheck",
+    desc: "Password input with a live Weak / Medium / Strong strength meter.",
+    icon: KeyRound,
+    color: "bg-orange-600",
+  },
+];
+
 const GitHubCalendar = lazy(() =>
   import("react-github-calendar").then((m) => ({ default: m.GitHubCalendar }))
 );
@@ -103,7 +161,7 @@ function Hero() {
               hi, i'm omkar 👋
             </h1>
             <small className="text-[#444748] mt-1">
-              Full Stack Developer · MERN & MEAN Stack · Pune, India
+              Full Stack Developer · MERN Stack · Pune, India
             </small>
             <div className="mt-3 flex flex-row flex-wrap gap-2 items-center">
               <a
@@ -144,8 +202,8 @@ function Hero() {
             <p className="mt-3 text-[#444748] text-left text-sm md:text-base">
               Full-stack developer with hands-on experience building and
               deploying real-time, AI-powered web applications. I work across
-              the MERN and MEAN stacks — React, Angular, Node.js, Express,
-              MongoDB. I enjoy solving real problems and shipping
+              the MERN stack (React, Node.js, Express, MongoDB). I enjoy
+              solving real problems and shipping
               production-ready products. Currently open to entry-level
               full-stack roles.
             </p>
@@ -208,42 +266,79 @@ function Hero() {
             </div>
           </Reveal>
           <hr className="border-t border-[#ebebeb] my-8" />
-          <Reveal className="flex flex-col items-start">
+          <Reveal className="flex flex-col items-start w-full">
             <h1 className="text-[24px] font-bold">Open Source Packages</h1>
-            <div className="flex mt-5 flex-col items-start">
-              <h1 className="font-bold">
-                📦 @omkarwarik1204/stark{" "}
-                <span className="ml-3 text-sm font-light">
-                  (React Component Library)
-                </span>
-              </h1>
-              <p className="mt-3 font-bold"></p>
+            <div className="flex mt-5 flex-col items-start w-full">
+              <div className="flex flex-row items-center justify-between flex-wrap gap-2 w-full">
+                <h1 className="font-bold">
+                  📦 @omkarwarik1204/stark{" "}
+                  <span className="ml-3 text-sm font-light">
+                    (React Component Library)
+                  </span>
+                </h1>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="rounded-full bg-[#f4f4f5] px-2.5 py-1 text-xs font-bold text-[#111111]">
+                    v1.5.0
+                  </span>
+                  <div className="flex items-center gap-1.5 rounded-full bg-[#f4f4f5] px-2.5 py-1 text-xs font-bold text-[#7C3AED]">
+                    <Download size={12} />
+                    568+ downloads across all versions
+                  </div>
+                </div>
+              </div>
               <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
                 A collection of reusable React components built with TypeScript
                 and Tailwind CSS. Designed to streamline UI development with
                 production-ready components.
               </p>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
-                Components: - Dynamic Island Navbar, Expands horizontally on
-                interaction with smooth transitions and dynamic gap spacing.
-                Modern, polished navigation component for sleek UI designs.
+
+              <p className="mt-5 font-bold text-sm">Components</p>
+              <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                {starkComponents.map(({ name, desc, icon: Icon, color }) => (
+                  <div
+                    key={name}
+                    className="flex items-start gap-3 rounded-xl border border-[#ebebeb] p-3"
+                  >
+                    <div
+                      className={`h-8 w-8 shrink-0 rounded-full ${color} flex items-center justify-center`}
+                    >
+                      <Icon size={15} className="text-white" />
+                    </div>
+                    <div className="flex flex-col items-start">
+                      <span className="font-bold text-sm">{name}</span>
+                      <p className="text-left mt-1 text-[#444748] text-xs md:text-sm">
+                        {desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-left mt-5 text-[#444748] text-sm md:text-base">
+                Features: Full TypeScript support with type declarations,
+                Tailwind CSS styling for easy customization, ESM and CommonJS
+                module support, published on npm.
               </p>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
-                FAQ Accordion, Click to expand/collapse FAQ items with smooth
-                transitions. Only one item opens at a time for clean, organized
-                content presentation.
-              </p>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
-                Features: - Full TypeScript support with type declarations -
-                Tailwind CSS styling for easy customization - ESM and CommonJS
-                module support - Published on npm
-              </p>
-              <a
-                href="https://www.npmjs.com/package/@omkarwarik1204/omkar-ui"
-                className="mt-3 "
-              >
-                Link
-              </a>
+              <div className="flex items-center mt-3 gap-4">
+                <a
+                  href="https://stark-ui-projects.vercel.app/"
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
+                  <Link2 size={14} className="text-[#7C3AED]" />
+                  <small className="text-[#7C3AED] font-bold">
+                    Live Showcase
+                  </small>
+                </a>
+                <a
+                  href="https://www.npmjs.com/package/@omkarwarik1204/stark"
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
+                  <Code size={14} />
+                  <small className="font-bold">npm</small>
+                </a>
+              </div>
             </div>
           </Reveal>
 
@@ -334,6 +429,17 @@ function Hero() {
           </Reveal>
 
           <hr className="border-t border-[#ebebeb] my-8" />
+          <Reveal className="flex flex-col items-center">
+            <Suspense fallback={<div className="h-37.5 w-full" />}>
+              <GitHubCalendar
+                username="omkarwarik02"
+                colorScheme="light"
+                fontSize={12}
+                year={new Date().getFullYear()}
+              />
+            </Suspense>
+          </Reveal>
+          <hr className="border-t border-[#ebebeb] my-8" />
           <div id="projects" className="flex flex-col items-start">
             <Reveal className="flex flex-col items-start">
               <h1 className="text-[24px] font-bold">My Projects</h1>
@@ -422,23 +528,13 @@ function Hero() {
               </div>
             </Reveal>
           </div>
-           <hr className="border-t border-[#ebebeb] my-8" />
-              <Reveal className="flex flex-col items-center">
-                <Suspense fallback={<div className="h-37.5 w-full" />}>
-                  <GitHubCalendar
-                    username="omkarwarik02"
-                    colorScheme="light"
-                    fontSize={12}
-                  />
-                </Suspense>
-              </Reveal>
           <hr className="border-t border-[#ebebeb] my-8" />
 
           <Reveal id="contact" className="flex flex-col text-center">
             <h1 className="font-bold">Get in touch</h1>
             <small className="mt-3 px-4">
               I'm currently open to full-time entry-level roles. Feel free to
-              reach out at omkarwarik1204@gmail.com — I'll respond whenever I
+              reach out at omkarwarik1204@gmail.com, I'll respond whenever I
               can.
             </small>
           </Reveal>
