@@ -342,7 +342,7 @@ function Hero() {
                 <Mail size={18} />
               </a>
               <a
-                href="/Omkar_Resume.pdf"
+                href="/Omkar_Warik_Resume.pdf"
                 download="Omkar_Resume.pdf"
                 className="p-2 bg-[#111111] rounded-lg flex items-center gap-2 cursor-pointer hover:opacity-90"
               >
