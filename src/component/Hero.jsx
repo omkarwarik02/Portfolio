@@ -42,8 +42,8 @@ import {
   SiOpenapiinitiative,
   SiBetterauth,
   SiGooglegemini,
-  SiJest,
-  SiTestinglibrary,
+  SiExpo,
+  SiFirebase,
   SiGithubactions,
   SiGit,
   SiGithub,
@@ -216,12 +216,15 @@ const skills = [
   { label: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
   { label: "Java", Icon: SiOpenjdk, color: "#437291" },
   { label: "React", Icon: SiReact, color: "#61DAFB" },
+  { label: "React Native", Icon: SiReact, color: "#61DAFB" },
+  { label: "Expo", Icon: SiExpo, color: "#000020" },
   { label: "Angular", Icon: SiAngular, color: "#DD0031" },
   { label: "Html", Icon: SiHtml5, color: "#E34F26" },
   { label: "CSS", Icon: SiCss, color: "#663399" },
   { label: "Angular Material", Icon: SiMaterialdesign, color: "#757575" },
   { label: "PrimeNG", Icon: SiPrimeng, color: "#0EA5E9" },
   { label: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
+  { label: "Motion Primitives", Icon: Sparkles, color: "#000000" },
   { label: "Node.js", Icon: SiNodedotjs, color: "#339933" },
   { label: "Express.js", Icon: SiExpress, color: "#000000" },
   { label: "MongoDB", Icon: SiMongodb, color: "#47A248" },
@@ -229,6 +232,7 @@ const skills = [
   { label: "Socket.IO", Icon: SiSocketdotio, color: "#010101" },
   { label: "REST API", Icon: SiOpenapiinitiative, color: "#6BA539" },
   { label: "Better Auth", Icon: SiBetterauth, color: "#000000" },
+  { label: "Firebase Auth", Icon: SiFirebase, color: "#FFCA28" },
   { label: "Groq API", Icon: Zap, color: "#F55036" },
   { label: "Gemini API", Icon: SiGooglegemini, color: "#8E75B2" },
   { label: "Git", Icon: SiGit, color: "#F05032" },
@@ -236,8 +240,6 @@ const skills = [
   { label: "Postman", Icon: SiPostman, color: "#FF6C37" },
   { label: "Vercel", Icon: SiVercel, color: "#000000" },
   { label: "Render", Icon: SiRender, color: "#46E3B7" },
-  { label: "Jest", Icon: SiJest, color: "#C21325" },
-  { label: "React Testing Library", Icon: SiTestinglibrary, color: "#E33332" },
   { label: "GitHub Actions", Icon: SiGithubactions, color: "#2088FF" },
 ];
 
@@ -611,7 +613,7 @@ function Hero() {
               ))}
             </div>
           </div>
-          <hr className="border-t border-[#ebebeb] my-8" />
+          <hr className="border-t border-[#ebebeb] my-16" />
 
           <Reveal id="contact" className="flex flex-col text-center">
             <h1 className="font-bold">Get in touch</h1>
