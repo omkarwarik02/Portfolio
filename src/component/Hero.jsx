@@ -19,6 +19,8 @@ import {
   Heart,
   Info,
   KeyRound,
+  Plus,
+  X,
 } from "lucide-react";
 import { LogoTooltip } from "@omkarwarik1204/stark";
 import "@omkarwarik1204/stark/style.css";
@@ -51,8 +53,163 @@ import {
 } from "react-icons/si";
 import Devlens from "../assets/Devlens.jpeg";
 import Helio from "../assets/Helio.jpeg";
+import QuickList from "../assets/QuickList.jpeg";
 import emoji from "../assets/emoji.jpeg";
 import Reveal from "./Reveal";
+import {
+  MorphingDialog,
+  MorphingDialogTrigger,
+  MorphingDialogContainer,
+  MorphingDialogContent,
+  MorphingDialogClose,
+  MorphingDialogTitle,
+  MorphingDialogSubtitle,
+  MorphingDialogDescription,
+  MorphingDialogImage,
+} from "./MorphingDialog";
+
+const projects = [
+  {
+    title: "QuickList",
+    subtitle: "Hyperlocal marketplace app",
+    image: QuickList,
+    // Tall phone screenshot: show it whole on a neutral panel instead of cropping.
+    imageClassName: "object-contain bg-[#f5f5f5]",
+    description:
+      "Hyperlocal marketplace app for small and home businesses. Sellers list products, nearby buyers discover them with geospatial search, and connect instantly on WhatsApp, with push notifications for new listings nearby.",
+    tech: "React Native | Expo | TypeScript | Node.js | Express.js | MongoDB | Firebase",
+    primaryLink: {
+      href: "https://github.com/omkarwarik02/QuickList/releases/latest",
+      label: "Download APK",
+      Icon: Download,
+    },
+    source: "https://github.com/omkarwarik02/QuickList",
+  },
+  {
+    title: "DevLens",
+    subtitle: "AI-powered code review tool",
+    image: Devlens,
+    imageClassName: "object-cover object-left-top",
+    description:
+      "AI-powered code review tool. Paste your code, get detailed AI feedback with ratings, suggestions, and best practices across 6 languages.",
+    tech: "React | TypeScript | Node.js | Express.js | MongoDB | Groq AI",
+    primaryLink: {
+      href: "https://dev-lens-murex.vercel.app/",
+      label: "Website",
+      Icon: Link2,
+    },
+    source: "https://github.com/omkarwarik02/DevLens",
+  },
+  {
+    title: "Helio",
+    subtitle: "AI-powered study planner",
+    image: Helio,
+    imageClassName: "object-cover object-left-top",
+    description:
+      "AI-powered study planner. Generates personalised 7-day study plans, task breakdowns, and an AI chat assistant from user-provided subjects.",
+    tech: "Angular | Node.js | Express.js | MongoDB | Groq AI | Better Auth",
+    primaryLink: {
+      href: "https://helio-kohl.vercel.app/",
+      label: "Website",
+      Icon: Link2,
+    },
+    source: "https://github.com/omkarwarik02/Helio",
+  },
+];
+
+function ProjectDialog({ project }) {
+  const { Icon: PrimaryIcon } = project.primaryLink;
+
+  return (
+    <MorphingDialog transition={{ type: "spring", bounce: 0.05, duration: 0.25 }}>
+      <MorphingDialogTrigger
+        style={{ borderRadius: "16px" }}
+        className="flex w-full flex-col overflow-hidden border border-[#ebebeb] bg-white"
+      >
+        <MorphingDialogImage
+          src={project.image}
+          alt={`${project.title} project`}
+          className={`h-56 w-full ${project.imageClassName}`}
+        />
+        <div className="flex grow flex-row items-end justify-between px-4 py-3">
+          <div className="text-left">
+            <MorphingDialogTitle className="font-bold text-[#111111]">
+              {project.title}
+            </MorphingDialogTitle>
+            <MorphingDialogSubtitle className="text-sm text-[#444748]">
+              {project.subtitle}
+            </MorphingDialogSubtitle>
+          </div>
+          <button
+            type="button"
+            className="relative ml-1 flex h-7 w-7 shrink-0 select-none items-center justify-center rounded-lg border border-[#ebebeb] text-[#444748] transition-colors hover:bg-[#f5f5f5] hover:text-[#111111] active:scale-[0.98]"
+            aria-label={`Open ${project.title} details`}
+          >
+            <Plus size={14} />
+          </button>
+        </div>
+      </MorphingDialogTrigger>
+      <MorphingDialogContainer>
+        <MorphingDialogContent
+          style={{ borderRadius: "24px" }}
+          className="pointer-events-auto relative flex max-h-[90vh] w-full flex-col overflow-y-auto border border-[#ebebeb] bg-white sm:w-[560px]"
+        >
+          <MorphingDialogImage
+            src={project.image}
+            alt={`${project.title} project`}
+            className={`h-72 w-full shrink-0 sm:h-80 ${project.imageClassName}`}
+          />
+          <div className="p-6 text-left">
+            <MorphingDialogTitle className="text-2xl font-bold text-[#111111]">
+              {project.title}
+            </MorphingDialogTitle>
+            <MorphingDialogSubtitle className="text-[#444748]">
+              {project.subtitle}
+            </MorphingDialogSubtitle>
+            <MorphingDialogDescription
+              disableLayoutAnimation
+              variants={{
+                initial: { opacity: 0, scale: 0.8, y: 100 },
+                animate: { opacity: 1, scale: 1, y: 0 },
+                exit: { opacity: 0, scale: 0.8, y: 100 },
+              }}
+            >
+              <p className="mt-3 text-sm text-[#444748] md:text-base">
+                {project.description}
+              </p>
+              <small className="mt-3 block font-bold tracking-widest">
+                {project.tech}
+              </small>
+              <div className="mt-3 flex items-center gap-4">
+                <a
+                  href={project.primaryLink.href}
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
+                  <PrimaryIcon size={14} className="text-[#7C3AED]" />
+                  <small className="font-bold text-[#7C3AED]">
+                    {project.primaryLink.label}
+                  </small>
+                </a>
+                <a
+                  href={project.source}
+                  target="_blank"
+                  className="flex flex-row items-center gap-1"
+                >
+                  <Code size={14} />
+                  <small className="font-bold">Source</small>
+                </a>
+              </div>
+            </MorphingDialogDescription>
+          </div>
+          <MorphingDialogClose className="top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#111111] shadow-sm">
+            <X size={16} />
+          </MorphingDialogClose>
+        </MorphingDialogContent>
+      </MorphingDialogContainer>
+    </MorphingDialog>
+  );
+}
 
 const skills = [
   { label: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
@@ -446,87 +603,13 @@ function Hero() {
               <small className="text-[#444748]">Check out my latest work</small>
             </Reveal>
 
-            <Reveal className="flex mt-5 flex-col w-full">
-              <img
-                src={Devlens}
-                alt="DevLens project"
-                width={1894}
-                height={878}
-                loading="lazy"
-                decoding="async"
-                className="rounded-2xl w-full object-cover"
-              ></img>
-              <h1 className="font-bold text-left mt-5 text-[#444748]">
-                DevLens
-              </h1>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
-                AI-powered code review tool. Paste your code, get detailed AI
-                feedback with ratings, suggestions, and best practices across 6
-                languages.
-              </p>
-              <small className="text-left tracking-widest font-bold mt-3">
-                React | TypeScript | Node.js | Express.js | MongoDB | Groq AI
-              </small>
-
-              <div className="flex items-center mt-2 gap-4">
-                <a
-                  href="https://dev-lens-murex.vercel.app/"
-                  target="_blank"
-                  className="flex flex-row items-center gap-1"
-                >
-                  <Link2 size={14} className="text-[#7C3AED]" />
-                  <small className="text-[#7C3AED] font-bold">Website</small>
-                </a>
-                <a
-                  href="https://github.com/omkarwarik02/DevLens"
-                  target="_blank"
-                  className="flex flex-row items-center gap-1"
-                >
-                  <Code size={14} />
-                  <small className="font-bold">Source</small>
-                </a>
-              </div>
-            </Reveal>
-
-            <Reveal delay={0.1} className="flex flex-col mt-12 w-full">
-              <img
-                src={Helio}
-                alt="Helio project"
-                width={1898}
-                height={842}
-                loading="lazy"
-                decoding="async"
-                className="rounded-2xl w-full object-cover"
-              ></img>
-              <h1 className="font-bold text-left mt-5 text-[#444748]">Helio</h1>
-              <p className="text-left mt-3 text-[#444748] text-sm md:text-base">
-                AI-powered study planner. Generates personalised 7-day study
-                plans, task breakdowns, and an AI chat assistant from
-                user-provided subjects.
-              </p>
-              <small className="text-left tracking-widest font-bold mt-3">
-                Angular | Node.js | Express.js | MongoDB | Groq AI | Better Auth
-              </small>
-
-              <div className="flex items-center mt-2 gap-4">
-                <a
-                  href="https://helio-kohl.vercel.app/"
-                  target="_blank"
-                  className="flex flex-row items-center gap-1"
-                >
-                  <Link2 size={14} className="text-[#7C3AED]" />
-                  <small className="text-[#7C3AED] font-bold">Website</small>
-                </a>
-                <a
-                  href="https://github.com/omkarwarik02/Helio"
-                  target="_blank"
-                  className="flex flex-row items-center gap-1"
-                >
-                  <Code size={14} />
-                  <small className="font-bold">Source</small>
-                </a>
-              </div>
-            </Reveal>
+            <div className="flex flex-col gap-6 mt-5 w-full">
+              {projects.map((project, i) => (
+                <Reveal key={project.title} delay={i * 0.1} className="w-full">
+                  <ProjectDialog project={project} />
+                </Reveal>
+              ))}
+            </div>
           </div>
           <hr className="border-t border-[#ebebeb] my-8" />
 
